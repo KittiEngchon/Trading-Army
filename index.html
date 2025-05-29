@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trading Army Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e1013;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 20px;
+      background: #1f2227;
+      text-align: center;
+      font-size: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #1e1f24;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #4caf50;
+    }
+    .status {
+      font-weight: bold;
+      color: #ffd700;
+    }
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    ⚔️ AI Trading Army Dashboard
+  </header>
+  <div class="grid">
+    <div class="card">
+      <h3>Sniper AI</h3>
+      <p>Status: <span class="status">Active</span></p>
+      <p>Last Trade: $MemeCoin - +22%</p>
+    </div>
+    <div class="card">
+      <h3>Arbitrage AI</h3>
+      <p>Status: <span class="status">Active</span></p>
+      <p>Spread: 1.8% between Uniswap ↔ Sushiswap</p>
+    </div>
+    <div class="card">
+      <h3>Flash Loan AI</h3>
+      <p>Status: <span class="status">Cooldown</span></p>
+      <p>Last Profit: $1,220</p>
+    </div>
+    <div class="card">
+      <h3>Sandwich AI</h3>
+      <p>Status: <span class="status">Running</span></p>
+      <p>Target: $PEPE tx 0xabc...def</p>
+    </div>
+    <div class="card">
+      <h3>MEV AI</h3>
+      <p>Status: <span class="status">Observing Mempool</span></p>
+      <p>Front-run opportunity found: Yes</p>
+    </div>
+    <div class="card">
+      <h3>Portfolio Chart</h3>
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('chart');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'PnL ($)',
+          data: [200, 400, 180, 520, 700, 650, 850],
+          borderColor: '#4caf50',
+          backgroundColor: 'rgba(76, 175, 80, 0.2)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#fff'
+            }
+          },
+          x: {
+            ticks: {
+              color: '#fff'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: '#fff'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
